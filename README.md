@@ -1,3 +1,42 @@
+http://nefariousmotorsports.com/forum/index.php?action=printpage;topic=2703.0
+Il est temps de redonner au forum.
+
+(http://gm.mainframe.no/pics/maplocator.png)
+
+En bref - j'ai créé un outil extensible, qui vous permet de localiser des cartes dans n'importe quel binaire basé sur le code machine réel.
+Il peut ensuite les vider au format XDF ou pack de cartes.
+L'idée est un peu similaire à l'outil de spen (qu'il ne souhaite pas partager), mais l'exécution est très probablement très différente.
+
+L'outil prend en charge les versions 32 bits et 64 bits de Windows, Linux et Mac OS X.
+Sur la plupart des plates-formes, vous pouvez simplement double-cliquer sur le fichier maplocator-ui.jar .
+Si vous ne pouvez pas pour une raison quelconque, démarrez-le avec java -jar maplocator-ui.jar à partir de la ligne de commande. Cela vous permettra également de voir la sortie de débogage de l'outil.
+
+L'interface utilisateur est très simpliste, mais en dessous se trouve un moteur de détection personnalisable à part entière.
+Extensible à la fois via des plugins et du XML, le but est de faire collaborer les gens et de rendre la recherche des cartes les plus importantes sur n'importe quel binaire ME7 aussi simple que d'appuyer sur un bouton.
+Il est en fait possible de prendre en charge d'autres familles d'ECU également, mais pour cela les plugins doivent être écrits, car le plugin XML est orienté vers une architecture C167 et ME7.
+
+Ceci est une première version. Il y a très peu de gestion des exceptions et la sortie du pack de cartes n'est pas encore prise en charge.
+Il y a quelques définitions XML dans le dossier me7xmls , qu'il utilise pour localiser les cartes.
+
+Je publierai un tutoriel et une documentation sur la création de vos propres définitions au cours du week-end.
+L'objectif principal de cet outil est d'avoir un effort de collaboration. Il y a pas mal de gens sur le forum ici, qui pourraient contribuer aux définitions XML - je n'aurais jamais assez de temps pour le faire tout seul.
+Pour l'instant, n'hésitez pas à jouer.
+La source entière de l'application peut être clonée à partir d'ici:
+https://github.com/prj/me7-tools (https://github.com/prj/me7-tools)
+
+Exécutez le package mvn pour construire l'application, qui va être assemblé et placé dans maplocator-ui / maplocator-release.
+Vous aurez besoin de maven2 + et Java 6+ pour construire.
+
+Changelog:
+17.10.2012
+- Prise en charge de plusieurs modèles
+- Meilleure détection de la longueur d'axe
+- Ajout de KFZW / KFZW2
+- Les cartes trouvées sont désormais triées par ordre alphabétique dans l'interface utilisateur
+
+
+
+
 Part 1: Basic definitions
 
 Definitions are stored in a XML format in the me7xmls directory.
